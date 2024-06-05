@@ -5,8 +5,15 @@
 import test from '../fixtures/customtest';
 
 test("Login to Sauce Demo and add item to cart", async ( {page, homePage, orderPage} ) => {
+    
+    // This was the earlier implementation using page object created each time 
+    // whenever being referenced in test file
+
+    // ###
     //let homePage = new HomePage(page); -> Earlier Implementation
     //let orderPage = new OrderPage(page);
+    // ####
+
     let itemName = "Sauce Labs Backpack";
     await homePage.navigateTo();
     await homePage.loginWith("standard_user", "secret_sauce");
