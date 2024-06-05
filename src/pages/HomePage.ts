@@ -20,7 +20,6 @@ export class HomePage extends BasePage{
         await homePageLocators.usernameTextField(this.page).fill(username)
         await homePageLocators.passwordTextField(this.page).fill(password)
         await homePageLocators.loginButton(this.page).click();
-
         await this.page.waitForTimeout(2000);
 
     }

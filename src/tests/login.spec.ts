@@ -1,18 +1,16 @@
-import {test} from "@playwright/test"
-import { HomePage } from "../pages/HomePage";
-import { OrderPage } from "../pages/OrderPage";
 
+// import { HomePage } from "../pages/HomePage";
+// import { OrderPage } from "../pages/OrderPage";
 
-test("Login to Sauce Demo and add item to cart", async ( { page } ) => {
- //   let homePage: HomePage = new HomePage(page);
+import test from '../fixtures/customtest';
 
-      let itemName = "Sauce Labs Backpack";
-      let homePage = new HomePage(page);
-      let orderPage = new OrderPage(page);
-
-      await homePage.navigateTo();
-      await homePage.loginWith("standard_user","secret_sauce");
-      await orderPage.addProductToCart(itemName);
-      await orderPage.verifyRemoveToCartButtonDisplayed(itemName);
+test("Login to Sauce Demo and add item to cart", async ( {page, homePage, orderPage} ) => {
+    //let homePage = new HomePage(page); -> Earlier Implementation
+    //let orderPage = new OrderPage(page);
+    let itemName = "Sauce Labs Backpack";
+    await homePage.navigateTo();
+    await homePage.loginWith("standard_user", "secret_sauce");
+    await orderPage.addProductToCart(itemName);
+    await orderPage.verifyRemoveToCartButtonDisplayed(itemName);
 
 });
