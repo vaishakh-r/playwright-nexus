@@ -4,7 +4,7 @@
 
 import test from '../fixtures/customtest';
 
-test("Login to Sauce Demo and add item to cart", async ( {page, homePage, orderPage} ) => {
+test("Login to Sauce Demo and add item to cart", async ( {page, homePage, orderPage, excelUtil} ) => {
     
     // This was the earlier implementation using page object created each time 
     // whenever being referenced in test file
@@ -15,6 +15,8 @@ test("Login to Sauce Demo and add item to cart", async ( {page, homePage, orderP
     // ####
 
     let itemName = "Sauce Labs Backpack";
+    let username = excelUtil.getValue("userlist",1,1);
+
     await homePage.navigateTo();
     await homePage.loginWith("standard_user", "secret_sauce");
     await orderPage.addProductToCart(itemName);
