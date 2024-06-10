@@ -15,7 +15,7 @@ test("Login to Sauce Demo and add item to cart", async ( {page, homePage, orderP
     // ####
 
     let itemName = "Sauce Labs Backpack";
-    let username = excelUtil.getValue("userlist",1,1);
+    let username = excelUtil.getValue("userlist",0,"username");
 
     await homePage.navigateTo();
     await homePage.loginWith("standard_user", "secret_sauce");

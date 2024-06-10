@@ -23,7 +23,7 @@ export class ExcelUtil {
         return data[rowNumber];
     }
 
-    public getValue(sheetName: string = this.workbook.SheetNames[0], rowNumber: number, colNum : number) : any[] {
+    public getValue(sheetName: string = this.workbook.SheetNames[0], rowNumber: number, colNum : any) : any[] {
         let rowData = this.getRowData(sheetName, rowNumber);
         return rowData[colNum];
     }
