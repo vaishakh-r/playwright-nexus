@@ -29,5 +29,5 @@ jobs:
               export DISPLAY=:99
     
           - name: Run Playwright tests
-            run: npm test
+            run: npx playwright test
     
